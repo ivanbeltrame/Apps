@@ -16,3 +16,11 @@
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
 }
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
