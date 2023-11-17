@@ -1,0 +1,18 @@
+#turn-img {
+    animation: spin 9s linear infinite;
+    border: 10px solid;
+    border-color: limegreen;
+    width: 100%;
+    max-width: 500px;
+    transform-origin: center;
+}
+
+#turn-container {
+    height: 500px;
+    perspective: 1000px;
+}
+
+@keyframes spin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
