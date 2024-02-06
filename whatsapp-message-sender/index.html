@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp message sender</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="w-50 mx-auto">
+        <h1 class="text-center">WhatsApp message sender</h1>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message to send</label>
+            <textarea class="form-control" id="message" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="+1 123 123 1234" aria-describedby="phoneHelp">
+            <div id="phoneHelp" class="form-text">
+                The phone number must be in international format.
+            </div>
+        </div>          
+        <div class="mb-3">
+            <label for="apiKey" class="form-label">API Key</label>
+            <input type="password" class="form-control" id="apiKey">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="rememberCredentials" checked>
+                <label class="form-check-label" for="rememberCredentials">Remeber credentials</label>
+            </div>              
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mb-3" onclick="send()">Send</button>
+        </div>
+
+        <div class="mb-3">
+            <label for="console" class="form-label">Console</label>
+            <textarea readonly class="form-control" id="console" rows="8"></textarea>
+        </div>
+    </div>
+
+    <h5>Get your API key <a href="https://www.callmebot.com/blog/free-api-whatsapp-messages/" target="_blank" rel="noreferrer noopener">here</a></h5>
+</body>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
