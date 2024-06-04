@@ -1,0 +1,16 @@
+@media (max-width: 567.98px) {
+    .field {
+        width: 70vw;
+    }
+    .weight-field {
+        width: 20vw;
+    }
+}
+@media (min-width: 568px) {
+    .field {
+        width: 40vw;
+    }
+    .weight-field {
+        width: 10vw;
+    }
+}
