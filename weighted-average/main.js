@@ -24,7 +24,7 @@ function addField() {
     let numbers = document.getElementById("numbers");
     let newField = document.createElement("div");
 
-    newField.className = "field input-group mb-3";
+    newField.className = "field input-group mb-3 mx-auto";
     
     newField.innerHTML += `
     <input type="text" class="form-control" placeholder="Number" aria-label="Number" id="number">
