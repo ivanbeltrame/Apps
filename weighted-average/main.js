@@ -27,8 +27,8 @@ function addField() {
     newField.className = "field input-group mb-3";
     
     newField.innerHTML += `
-    <input type="text" class="form-control" placeholder="Number" aria-label="Number" id="number" required>
-    <input type="text" class="weight-field form-control" placeholder="Weight" aria-label="Weight" id="weight" required>
+    <input type="text" class="form-control" placeholder="Number" aria-label="Number" id="number">
+    <input type="text" class="weight-field form-control" placeholder="Weight" aria-label="Weight" id="weight">
     <span class="input-group-text">%</span>
     `;
 
