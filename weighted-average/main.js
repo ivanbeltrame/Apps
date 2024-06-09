@@ -17,7 +17,7 @@ function calculate() {
 
     let average = (sum / weights).toFixed(2);
     if (isNaN(average)) {
-        document.getElementById("average").innerHTML = "Cannot calculate the average!<br>Use '.' instead of ','";
+        document.getElementById("average").innerHTML = "Cannot calculate the average!";
     } else {
         document.getElementById("average").innerHTML = "The average is " + average;
     }
