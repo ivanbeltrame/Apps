@@ -15,3 +15,6 @@ Fai finta che il tuo computer stia facendo un aggiornamento. Premi F11 per mette
 
 ## [Media ponderata](https://apps.ivanbeltrame.com/weighted-average/)
 Calcola la media ponderata facilmente
+
+## [Time in progress](https://apps.ivanbeltrame.com/time/)
+Controlla quanto tempo è passato dall'inizio dell'anno, del mese, della settimana e della giornata
