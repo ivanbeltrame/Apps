@@ -12,8 +12,9 @@ function daysInMonth (month, year) {
 const now = new Date();
 const currentYear = now.getFullYear();
 const currentMonth = now.getMonth() + 1;
-const currentDay = now.getDate();
-let currentWeekDay = now.getDay();
+const currentDate = now.getDate();
+const currentDay = now.getDay();
+let currentWeekDay = currentDay;
 // getDay() uses american week standard: sunday is first ... saturday is last
 if (currentWeekDay == 0 && !americanStandards) currentWeekDay = 7;
 
@@ -27,9 +28,9 @@ const dayProgress = document.getElementById("dayProgress");
 let start = new Date(now.getFullYear(), 0, 0);
 let diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
 let oneDay = 1000 * 60 * 60 * 24;
-let day = Math.floor(diff / oneDay);
+let days = Math.floor(diff / oneDay);
 
-let yearPercentile = leapYear(currentYear) ? day / 366 : day / 365;
+let yearPercentile = leapYear(currentYear) ? days / 366 : days / 365;
 yearPercentile = Math.round(yearPercentile * 100);
 
 // Set year progress bar
@@ -39,7 +40,7 @@ yearProgress.children[0].style.width = yearPercentile + "%";
 
 // Calculate month percentile
 let daysMonth = daysInMonth(currentMonth, currentYear);
-let monthPercentile = Math.round(currentDay / daysMonth * 100);
+let monthPercentile = Math.round(currentDate / daysMonth * 100);
 
 // Set month progress bar
 monthProgress.setAttribute("aria-valuenow", monthPercentile);
@@ -54,12 +55,36 @@ weekProgress.setAttribute("aria-valuenow", weekPercentile);
 weekProgress.children[0].innerHTML = weekPercentile + "%";
 weekProgress.children[0].style.width = weekPercentile + "%";
 
-// Calculate day percentile
-let todaySeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-const secondsInADay = 86400; // 60 seconds * 60 minutes * 24 hours
-let dayPercentile = Math.round(todaySeconds / secondsInADay * 100);
+// Real time clock
+const realTimeClock = document.getElementById("realTime");
 
-// Set today progress bar
-dayProgress.setAttribute("aria-valuenow", dayPercentile);
-dayProgress.children[0].innerHTML = dayPercentile + "%";
-dayProgress.children[0].style.width = dayPercentile + "%";
+let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][currentMonth - 1];
+let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][currentDay];
+let date = now.getDate();
+
+(function(){
+    let now = new Date();
+
+    let hours = now.getHours();
+    if (hours < 10) hours = "0" + hours;
+    let minutes = now.getMinutes();
+    if (minutes < 10) minutes = "0" + minutes;
+    let seconds = now.getSeconds();
+    if (seconds < 10) seconds = "0" + seconds;
+
+    let formattedTime = hours + ":" + minutes + ":" + seconds + " " + day + ", " + month + " " + date + ", " + currentYear;
+
+    realTimeClock.innerHTML = formattedTime;
+
+    // Calculate day percentile
+    let todaySeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    const secondsInADay = 86400; // 60 seconds * 60 minutes * 24 hours
+    let dayPercentile = Math.round(todaySeconds / secondsInADay * 100);
+
+    // Set today progress bar
+    dayProgress.setAttribute("aria-valuenow", dayPercentile);
+    dayProgress.children[0].innerHTML = dayPercentile + "%";
+    dayProgress.children[0].style.width = dayPercentile + "%";
+
+    setTimeout(arguments.callee, 1000);
+})();
