@@ -1,0 +1,54 @@
+{
+    "definizioni": {
+        "carreggiata": [
+            {
+                "img": "/img/550.png",
+                "q": "AAAIn una carreggiata del tipo rappresentato si pu\u00f2 sorpassare anche in curva",
+                "a": true
+            },
+            {
+                "img": "/img/550.png",
+                "q": "BBBLa carreggiata del tipo rappresentato \u00e8 a doppio senso di circolazione",
+                "a": true
+            }
+        ],
+        "aa": [
+            {
+                "img": "/img/550.png",
+                "q": "CCCIn una carreggiata extraurbana del tipo rappresentato le corsie interne sono, di norma, riservate al sorpasso",
+                "a": true
+            },
+            {
+                "img": "/img/550.png",
+                "q": "DDDIn una carreggiata del tipo rappresentato non si pu\u00f2 effettuare l'inversione di marcia",
+                "a": true
+            }
+        ]
+    },
+    "doveri": {
+        "senso": [
+            {
+                "img": "/img/550.png",
+                "q": "EEEIn una carreggiata extraurbana del tipo rappresentato si pu\u00f2 sorpassare indifferentemente sia da destra che da sinistra",
+                "a": false
+            },
+            {
+                "img": "/img/550.png",
+                "q": "FFFIn una carreggiata extraurbana del tipo rappresentato si pu\u00f2 sempre marciare per file parallele",
+                "a": false
+            }
+        ],
+        "bb": [
+            {
+                "img": "/img/552.png",
+                "q": "GGGNella strada rappresentata, per ogni senso di marcia, la corsia di destra \u00e8, di norma, dedicata alla marcia ordinaria",
+                "a": true
+            },
+            {
+                "img": "/img/552.png",
+                "q": "HHHLa strada rappresentata \u00e8 composta da tre corsie per ogni senso di marcia",
+                "a": true
+            }
+        ]
+    }
+}
