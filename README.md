@@ -7,7 +7,7 @@ Divertiti a caricare un'immagine e farla roteare
 ## [Turning cube image](https://apps.ivanbeltrame.com/turn-cube/)
 Divertiti a caricare un'immagine e farla roteare con una forma cubica
 
-## [Quiz patente B](https://apps.ivanbeltrame.com/quizpatente/)
+## [Quiz patente B](https://apps.ivanbeltrame.com/quiz-patente/)
 Esercitati con i quiz della patente B. Quiz aggiornati al 2023, con 7139 domande fra cui 3983 con immagini
 
 ## [Media ponderata](https://apps.ivanbeltrame.com/weighted-average/)
