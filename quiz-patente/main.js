@@ -29,7 +29,25 @@ function getRandomQuiz() {
     let quizzes = Object.values(lesson);
     quiz = quizzes[Math.floor(Math.random() * quizzes.length)];
 
-    image = "img" in quiz ? "<img src='." + quiz.img + "'>" : "";
+    if ("img" in quiz) {
+        let idModal = (quiz.img).replaceAll("/", "").replace(".", "");
+        let modal = `<div class="modal fade" tabindex="-1" id="` + idModal + `">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src=".` + quiz.img + `">
+                </div>
+            </div>
+            </div>
+        </div>`;
+        
+        image = "img" in quiz ? "<img style='cursor: pointer;' class='inline-img' src='." + quiz.img + "' onclick='openModal(\"" + idModal + "\")'>" + modal : "";
+    } else {
+        image = "";
+    }
 }
 
 function checkAns(ans) {
@@ -51,7 +69,6 @@ function checkAns(ans) {
         document.querySelector("#quizList .row:nth-child(1) #solution").innerHTML = "<b class='text-success'>Giusto!</b>";
     } else {
         let rightAns = !ans ? "Vero" : "Falso";
-        console.log(rightAns);
         document.querySelector("#quizList .row:nth-child(1) #solution").innerHTML = "<b class='text-danger'>Sbagliato! La risposta giusta era <b class='text-success'>" + rightAns + "</b></b>";
     }
     
@@ -86,6 +103,10 @@ function newQuestion() {
     document.querySelector("#quizList .row:nth-child(1) #image").innerHTML = image;
 }
 
+function openModal(idModal) {
+    const modal = new bootstrap.Modal("#" + idModal);
+    modal.show();
+}
 
 // fetch("./test.json")
 fetch("./quizPatenteB2023.json")
