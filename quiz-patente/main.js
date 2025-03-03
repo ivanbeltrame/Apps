@@ -38,13 +38,13 @@ function getRandomQuiz() {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src=".` + quiz.img + `">
+                    <img src="https://cdn.jsdelivr.net/gh/ivanbeltrame/apps@latest/quiz-patente/` + quiz.img + `">
                 </div>
             </div>
             </div>
         </div>`;
         
-        image = "img" in quiz ? "<img style='cursor: pointer;' class='inline-img' src='." + quiz.img + "' onclick='openModal(\"" + idModal + "\")'>" + modal : "";
+        image = "img" in quiz ? "<img style='cursor: pointer;' class='inline-img' src='https://cdn.jsdelivr.net/gh/ivanbeltrame/apps@latest/quiz-patente/" + quiz.img + "' onclick='openModal(\"" + idModal + "\")'>" + modal : "";
     } else {
         image = "";
     }
