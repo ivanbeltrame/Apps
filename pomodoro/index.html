@@ -37,25 +37,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h3>Duration of timers</h2>
+                <h3>Duration of timers</h3>
                 <div class="d-flex flex-row">
                     <div class="form-floating">
-                        <input type="number" class="form-control" name="pomodoroDuration" id="pomodoroDuration" placeholder="Pomodoro">
+                        <input type="number" class="form-control" name="pomodoroDuration" id="pomodoroDuration" placeholder="Pomodoro" value="25" min="1">
                         <label for="pomodoroDuration">Pomodoro</label>
                     </div>
                     <div class="form-floating">
-                        <input type="number" class="form-control" name="shortDuration" id="shortDuration" placeholder="short">
+                        <input type="number" class="form-control" name="shortDuration" id="shortDuration" placeholder="short" value="5" min="1">
                         <label for="shortDuration">Short</label>
                     </div>
                     <div class="form-floating">
-                        <input type="number" class="form-control" name="longDuration" id="longDuration" placeholder="long">
+                        <input type="number" class="form-control" name="longDuration" id="longDuration" placeholder="long" value="15" min="1">
                         <label for="longDuration">Long</label>
                     </div>
                 </div>
+                <h3>Long break interval</h3>
+                <div class="form-floating">
+                    <input type="number" class="form-control" name="longInterval" id="longInterval" placeholder="Interval" value="4" min="1">
+                    <label for="longInterval">Interval</label>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="updateSettings()">Save changes</button>
             </div>
             </div>
         </div>
