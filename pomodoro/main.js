@@ -1,27 +1,32 @@
-// let inter = setInterval(() => {
-//     console.log("ciao");
-// }, 1000);
-
-// setTimeout(() => {
-//     clearInterval(inter);
-// }, 5000);
-
 let timer;
 let timerType = "pomodoro";
+let iteration = 1;
 let timerSpan = document.getElementById("timer");
-let pomodoroTime = 60 * 25;
-// let pomodoroTime = 6;
-let shortBreakTime = 60 * 5;
-let longBreakTime = 60 * 15;
+// let pomodoroTime = 60 * 25;
+let pomodoroTime = 4;
+// let shortBreakTime = 60 * 5;
+let shortBreakTime = 4;
+// let longBreakTime = 60 * 15;
+let longBreakTime = 4;
 
 function startTimer() {
     function updateTimer() {
         // console.log(seconds);
         timerSpan.innerHTML = formatSeconds(seconds);
-        seconds -= 1;
         if (seconds == 0) {
-            clearInterval(timer);
+            if (timerType == "pomodoro") {
+                if (iteration != 4) {
+                    updateTimerType("short");
+                } else {
+                    updateTimerType("long");
+                    iteration = 0;
+                }
+            } else {
+                updateTimerType("pomodoro");
+                iteration += 1;
+            }
         }
+        seconds -= 1;
     }
     let seconds;
     if (timerType == "pomodoro") { seconds = pomodoroTime }
@@ -35,8 +40,9 @@ function updateTimerType(type) {
     timerType = type;
     clearInterval(timer);
     
-    if (timerType == "pomodoro") { timerSpan.innerHTML = formatSeconds(pomodoroTime) }
-    else if (timerType == "short") { timerSpan.innerHTML = formatSeconds(shortBreakTime) }
+    document.getElementById(type).checked = true;
+    if (timerType == "pomodoro") timerSpan.innerHTML = formatSeconds(pomodoroTime);
+    else if (timerType == "short") timerSpan.innerHTML = formatSeconds(shortBreakTime);
     else timerSpan.innerHTML = formatSeconds(longBreakTime);
 }
 
@@ -49,5 +55,6 @@ function formatSeconds(total) {
 document.querySelectorAll('input[name="timerType"]').forEach(radio => {
     radio.addEventListener('change', () => {
         updateTimerType(radio.value);
+        console.log("changed")
     });
 });
