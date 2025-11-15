@@ -2,12 +2,11 @@ let timer;
 let timerType = "pomodoro";
 let iteration = 1;
 let timerSpan = document.getElementById("timer");
-// let pomodoroTime = 60 * 25;
-let pomodoroTime = 4;
-// let shortBreakTime = 60 * 5;
-let shortBreakTime = 4;
-// let longBreakTime = 60 * 15;
-let longBreakTime = 4;
+
+let pomodoroTime = 60 * 25;
+let shortBreakTime = 60 * 5;
+let longBreakTime = 60 * 15;
+let longBreakIterations = 4;
 
 function startTimer() {
     function updateTimer() {
@@ -15,7 +14,7 @@ function startTimer() {
         timerSpan.innerHTML = formatSeconds(seconds);
         if (seconds == 0) {
             if (timerType == "pomodoro") {
-                if (iteration != 4) {
+                if (iteration != longBreakIterations) {
                     updateTimerType("short");
                 } else {
                     updateTimerType("long");
