@@ -16,14 +16,14 @@
     <div id="mainDiv" class="d-flex justify-content-center align-items-center text-center">
         <div class="d-flex flex-column">
             <div>
-                <input type="radio" class="btn-check" name="timerType" id="option1" autocomplete="off" checked>
-                <label class="btn btn-secondary" for="option1">Pomodoro</label>
+                <input type="radio" class="btn-check" name="timerType" id="pomodoro" value="pomodoro" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="pomodoro">Pomodoro</label>
 
-                <input type="radio" class="btn-check" name="timerType" id="option2" autocomplete="off">
-                <label class="btn btn-secondary" for="option2">Short break</label>
+                <input type="radio" class="btn-check" name="timerType" id="short" value="short" autocomplete="off">
+                <label class="btn btn-outline-primary" for="short">Short break</label>
 
-                <input type="radio" class="btn-check" name="timerType" id="option3" autocomplete="off">
-                <label class="btn btn-secondary" for="option3">Long break</label>
+                <input type="radio" class="btn-check" name="timerType" id="long" value="long" autocomplete="off">
+                <label class="btn btn-outline-primary" for="long">Long break</label>
             </div>
             <span id="timer">25:00</span>
             <button onclick="startTimer()">Start</button>
