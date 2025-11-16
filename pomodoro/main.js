@@ -55,10 +55,10 @@ function updateSettings() {
     longTime = longTimerSetting.value * 60;
     longBreakIterations = longIntervalSetting.value;
 
-    // localStorage.setItem("pomodoroTime", pomodoroTime / 60);
-    // localStorage.setItem("shortTime", shortTime / 60);
-    // localStorage.setItem("longTime", longTime / 60);
-    // localStorage.setItem("longBreakIterations", longBreakIterations);
+    localStorage.setItem("pomodoroTime", pomodoroTimerSetting.value);
+    localStorage.setItem("shortTime", shortTimerSetting.value);
+    localStorage.setItem("longTime", longTimerSetting.value);
+    localStorage.setItem("longBreakIterations", longIntervalSetting.value);
 
     if (timerType == "pomodoro") timerSpan.innerHTML = formatSeconds(pomodoroTime);
     else if (timerType == "short") timerSpan.innerHTML = formatSeconds(shortTime);
@@ -77,15 +77,16 @@ document.querySelectorAll('input[name="timerType"]').forEach(radio => {
     });
 });
 
-// let lsPomodoroTime = localStorage.getItem("pomodoroTime");
-// if (lsPomodoroTime) pomodoroTime = lsPomodoroTime * 60;
-// let lsShortTime = localStorage.getItem("shortTime");
-// if (lsShortTime) pomodoroTime = lsShortTime * 60;
-// let lsLongTime = localStorage.getItem("longTime");
-// if (lsLongTime) pomodoroTime = lsLongTime * 60;
-// let lsLongIterationsTime = localStorage.getItem("longBreakIterations");
-// if (lsLongIterationsTime) pomodoroTime = lsLongIterationsTime;
-// updateSettings();
+// Restore settings from localStorage
+let lsPomodoroTime = localStorage.getItem("pomodoroTime");
+if (lsPomodoroTime) pomodoroTimerSetting.value = lsPomodoroTime;
+let lsShortTime = localStorage.getItem("shortTime");
+if (lsShortTime) shortTimerSetting.value = lsShortTime;
+let lsLongTime = localStorage.getItem("longTime");
+if (lsLongTime) longTimerSetting.value = lsLongTime;
+let lsLongIterationsTime = localStorage.getItem("longBreakIterations");
+if (lsLongIterationsTime) longIntervalSetting.value = lsLongIterationsTime;
+updateSettings();
 
 // Reset modal settings -> after refreshing the page
 pomodoroTimerSetting.value = pomodoroTime / 60;
