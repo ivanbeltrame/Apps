@@ -10,6 +10,9 @@ Divertiti a caricare un'immagine e farla roteare con una forma cubica
 ## [Quiz patente B](https://apps.ivanbeltrame.com/quiz-patente/)
 Esercitati con i quiz della patente B. Quiz aggiornati al 2023, con 7139 domande fra cui 3983 con immagini
 
+## [Pomodoro Timer](https://apps.ivanbeltrame.com/pomodoro/)
+Utilizza il Pomodoro Timer per organizzare le tue sessioni di studio
+
 ## [Media ponderata](https://apps.ivanbeltrame.com/weighted-average/)
 Calcola la media ponderata facilmente
 
