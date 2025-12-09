@@ -17,6 +17,9 @@ function startTimer() {
     function updateTimer() {
         timerSpan.innerHTML = formatSeconds(seconds);
         if (seconds == 0) {
+            let sound = new Audio('timer-sound.mp3');
+            sound.play();
+            
             if (timerType == "pomodoro") {
                 if (iteration != longBreakIterations) {
                     updateTimerType("short");
@@ -40,9 +43,6 @@ function startTimer() {
 }
 
 function updateTimerType(type) {
-    let sound = new Audio('timer-sound.mp3');
-    sound.play();
-
     timerType = type;
     clearInterval(timer);
     
