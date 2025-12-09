@@ -40,6 +40,9 @@ function startTimer() {
 }
 
 function updateTimerType(type) {
+    let sound = new Audio('timer-sound.mp3');
+    sound.play();
+
     timerType = type;
     clearInterval(timer);
     
